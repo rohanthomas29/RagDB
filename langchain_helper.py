@@ -14,10 +14,11 @@ load_dotenv()
 
 
 def get_few_shot_db_chain():
+    #Enter your own database credentials here
     db_user = "root"
-    db_password = "root"
+    db_password = ""
     db_host = "localhost"
-    db_name = "atliq_tshirts"
+    db_name = "adventureworks"
     db = SQLDatabase.from_uri(f"mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_name}",sample_rows_in_table_info=3)
     llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.1)
 
